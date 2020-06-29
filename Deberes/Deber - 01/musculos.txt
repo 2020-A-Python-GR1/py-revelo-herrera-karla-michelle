@@ -1,0 +1,6 @@
+ID, NOMBRE EJERCICIO, NOMBRE MÚSCULO, UBICACION, ¿TIENE ELASTICIDAD?, MASA MUSCULAR 
+7; Abdominales; Recto abdominal; abdomen; True; 3.4
+1; abdominales; oblicuo interno;abdominal; True; 0.4
+4; Elevacion lateral de hombros; triceps; brazos; True; 1.3
+11; Elevacion lateral de hombros; biceps; brazos; True; 2.3
+1; zancadas; gluteo mayor;gluteo; True; 4.5

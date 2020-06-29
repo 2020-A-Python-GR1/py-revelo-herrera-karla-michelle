@@ -1,0 +1,4 @@
+ID, NOMBRE, DURACION, REPETICIONES, ¿ELIMINA GRASA?, ¿TONIFICA? 
+2; abdominales; 0.5;3; True; True 
+10; zancadas; 0.5; 5; False; True 
+0; Elevacion lateral de hombros; 0.4; 4; True; True 
