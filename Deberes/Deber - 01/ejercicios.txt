@@ -1,4 +1,12 @@
 ID, NOMBRE, DURACION, REPETICIONES, ¿ELIMINA GRASA?, ¿TONIFICA? 
-2; abdominales; 0.5;3; True; True 
-10; zancadas; 0.5; 5; False; True 
-0; Elevacion lateral de hombros; 0.4; 4; True; True 
+11; sentadillas; 0.5;8; False; True 
+11; zancadas; 0.6; 4; False; True 
+12; flexiones de pecho; 1; 6; False; True 
+15; elevacion lateral; 0.5; 4; False; True 
+0; plancha; 1; 4; True; True 
+19; plancha lateral; 0.5; 4; True; False 
+5; elevacion de pelvis; 0.6; 4; False; True 
+4; elevacion de talones; 0.6; 4; False; True 
+8; extension de cadera; 0.6; 5; True; True 
+2; zancadas con salto; 0.6; 4; True; True 
+13; burpees; 0.7; 4; True; True 
