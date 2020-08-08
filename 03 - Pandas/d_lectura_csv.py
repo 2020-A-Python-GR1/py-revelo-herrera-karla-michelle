@@ -9,29 +9,35 @@ Created on Sat Jul 25 10:08:37 2020
 import pandas as pd
 import os
 
-path = './data/artwork_data.csv'
+path = "/home/dev-16/Documentos/Universidad/Python-Revelo-Karla/py-revelo-herrera-karla-michelle/03 - Pandas/data/artwork_data.csv"
 
-df1 = pd.read_csv(path,nrows = 10)
 
-# definir columnas
+df1 = pd.read_csv(
+    path,
+    nrows=10,
+    )
 
-columnas = ['id', 'artist','title',
-            'medium', 'year', 
+columnas = ['id', 'artist', 'title',
+            'medium', 'year',
             'acquisitionYear', 'height',
             'width', 'units']
 
 df2 = pd.read_csv(
-        path,
-        nrows = 10,
-        usecols = columnas)
+    path,
+    nrows=10,
+    usecols = columnas)
 
-# colocar como index los valores de la columna id
 df3 = pd.read_csv(
-        path,
-        nrows = 10,
-        usecols = columnas,
-        index_col = 'id')
+    path,
+    usecols = columnas,
+    index_col = 'id')
 
-path_guardado = './data/artwork_data.csv'
 
+
+path_guardado = "/home/dev-16/Documentos/Universidad/Python-Revelo-Karla/py-revelo-herrera-karla-michelle/03 - Pandas/data/artwork_data.pickle"
+# artwork_data.pickle
+
+df3.to_pickle(path_guardado)
+
+df4 = pd.read_pickle(path_guardado)
 
