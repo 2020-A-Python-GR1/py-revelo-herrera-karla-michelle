@@ -18,14 +18,15 @@ from PIL import Image, ImageChops, ImageEnhance, ImageOps, ImageColor, ImageDraw
 class Aplicacion():
     def __init__(self):
         self.inicio = tk.Tk()
-        self.inicio.geometry('350x500') # anchura x altura
+        self.inicio.geometry('400x510') # anchura x altura
         self.inicio.title('')
 
         image2 = Image.open("/home/dev-16/Documentos/Universidad/Python-Revelo-Karla/py-revelo-herrera-karla-michelle/fondo.png")        
+        image2 = image2.resize((420, 420), Image.ANTIALIAS)
         image1 = ImageTk.PhotoImage(image2)                
         background_label = Label(self.inicio, image=image1)
         background_label.image=image1
-        background_label.place(x=0, y=0, height=500, width=500)        
+        background_label.place(x=0, y=0, height=420, width=420)        
 
         fontStyle = tkFont.Font(family="Arial", size=12)
 
@@ -46,6 +47,7 @@ def abrir_imagen():
         pantallaPrincipal.title('')
         pantallaPrincipal.configure(bg = 'white') 
         image2 = Image.open("/home/dev-16/Documentos/Universidad/Python-Revelo-Karla/py-revelo-herrera-karla-michelle/perrito.png")                
+        image2 = image2.resize((400, 410), Image.ANTIALIAS)
         image1 = ImageTk.PhotoImage(image2)
         background_label = Label(pantallaPrincipal, image=image1)
         background_label.image=image1
@@ -71,6 +73,7 @@ def dimensiones():
         pantallaDimensiones.title('')
         pantallaDimensiones.configure(bg = 'white')
         image2 = Image.open("/home/dev-16/Documentos/Universidad/Python-Revelo-Karla/py-revelo-herrera-karla-michelle/perrito.png")                
+        image2 = image2.resize((400, 410), Image.ANTIALIAS)
         image1 = ImageTk.PhotoImage(image2)
         background_label = Label(pantallaDimensiones, image=image1)
         background_label.image=image1
@@ -136,6 +139,7 @@ def cortar():
     pantallaCorte.title('')
     pantallaCorte.configure(bg = 'white')
     image2 = Image.open("/home/dev-16/Documentos/Universidad/Python-Revelo-Karla/py-revelo-herrera-karla-michelle/perrito.png")                
+    image2 = image2.resize((400, 410), Image.ANTIALIAS)
     image1 = ImageTk.PhotoImage(image2)
     background_label = Label(pantallaCorte, image=image1)
     background_label.image=image1
@@ -159,6 +163,7 @@ def cortar():
     
 def corte_cuadrado():
     imagen = Image.open("/home/dev-16/Documentos/Universidad/Python-Revelo-Karla/py-revelo-herrera-karla-michelle/perrito.png")
+    imagen = imagen.resize((400, 410), Image.ANTIALIAS)
     global area_recortada 
     global box
     box = (100, 100, 400, 400)       
@@ -172,6 +177,7 @@ def corte_cuadrado():
 
 def corte1():
     imagen = Image.open("/home/dev-16/Documentos/Universidad/Python-Revelo-Karla/py-revelo-herrera-karla-michelle/perrito.png")
+    imagen = imagen.resize((400, 410), Image.ANTIALIAS)
     box = (50, 50, 400, 400)    
     area_recortada = imagen.crop(box)
     #img = ImageTk.PhotoImage(area_recortada)
@@ -183,6 +189,7 @@ def corte1():
     
 def corte2():
     imagen = Image.open("/home/dev-16/Documentos/Universidad/Python-Revelo-Karla/py-revelo-herrera-karla-michelle/perrito.png")
+    imagen = imagen.resize((400, 410), Image.ANTIALIAS)
     box = (200, 200, 400, 400)
     area_recortada = imagen.crop(box)
     #img = ImageTk.PhotoImage(area_recortada)
@@ -194,6 +201,7 @@ def corte2():
 
 def corte3():
     imagen = Image.open("/home/dev-16/Documentos/Universidad/Python-Revelo-Karla/py-revelo-herrera-karla-michelle/perrito.png")
+    imagen = imagen.resize((400, 410), Image.ANTIALIAS)
     box = (160, 160, 500, 500)
     area_recortada = imagen.crop(box)
     #img = ImageTk.PhotoImage(area_recortada)
@@ -253,6 +261,7 @@ def rotar():
     pantallaRotar.title('')
     pantallaRotar.configure(bg = 'white')
     image2 = Image.open("/home/dev-16/Documentos/Universidad/Python-Revelo-Karla/py-revelo-herrera-karla-michelle/perrito.png")                
+    image2 = image2.resize((400, 410), Image.ANTIALIAS)
     image1 = ImageTk.PhotoImage(image2)
     background_label = Label(pantallaRotar, image=image1)
     background_label.image=image1
@@ -276,6 +285,7 @@ def rotar():
 
 def izquierda():
     imagen = Image.open("/home/dev-16/Documentos/Universidad/Python-Revelo-Karla/py-revelo-herrera-karla-michelle/perrito.png")        
+    imagen = imagen.resize((400, 410), Image.ANTIALIAS)
     img_rotada = imagen.transpose(Image.ROTATE_90)
     image1 = ImageTk.PhotoImage(img_rotada)
     background_label = Label(pantallaRotar, image=image1)
@@ -285,6 +295,7 @@ def izquierda():
 
 def derecha():
     imagen = Image.open("/home/dev-16/Documentos/Universidad/Python-Revelo-Karla/py-revelo-herrera-karla-michelle/perrito.png")
+    imagen = imagen.resize((400, 410), Image.ANTIALIAS)
     img_rotada = imagen.transpose(Image.ROTATE_270)
     image1 = ImageTk.PhotoImage(img_rotada)
     background_label = Label(pantallaRotar, image=image1)
@@ -294,6 +305,7 @@ def derecha():
     
 def horizontal():
     imagen = Image.open("/home/dev-16/Documentos/Universidad/Python-Revelo-Karla/py-revelo-herrera-karla-michelle/perrito.png")
+    imagen = imagen.resize((400, 410), Image.ANTIALIAS)
     img_rotada = imagen
     image1 = ImageTk.PhotoImage(img_rotada)
     background_label = Label(pantallaRotar, image=image1)
@@ -303,6 +315,7 @@ def horizontal():
     
 def vertical():
     imagen = Image.open("/home/dev-16/Documentos/Universidad/Python-Revelo-Karla/py-revelo-herrera-karla-michelle/perrito.png")
+    imagen = imagen.resize((400, 410), Image.ANTIALIAS)
     img_rotada = imagen.transpose(Image.ROTATE_180)
     image1 = ImageTk.PhotoImage(img_rotada)
     background_label = Label(pantallaRotar, image=image1)
@@ -337,12 +350,12 @@ def callback5(event):
         efecto = "temperatura()"
         imgCorte = temperatura()
         print(efecto)
-    elif(evento_string == "..!toplevel2.!frame.!canvas.!frame.!button5"):
+    elif(evento_string == ".!toplevel2.!frame.!canvas.!frame.!button5"):
         print("ic")
         efecto = "ic()"
         imgCorte = ic()
         print(efecto)
-    elif(evento_string == ".!.!toplevel2.!frame.!canvas.!frame.!button6"):
+    elif(evento_string == ".!toplevel2.!frame.!canvas.!frame.!button6"):
         print("bn")
         efecto = "bn()"
         imgCorte = bn()
@@ -375,6 +388,7 @@ def efectos():
     pantallaEfectos.title('')
     pantallaEfectos.configure(bg = 'white')
     image2 = Image.open("/home/dev-16/Documentos/Universidad/Python-Revelo-Karla/py-revelo-herrera-karla-michelle/perrito.png")                
+    image2 = image2.resize((400, 410), Image.ANTIALIAS)
     image1 = ImageTk.PhotoImage(image2)
     background_label = Label(pantallaEfectos, image=image1)
     background_label.image=image1
@@ -416,6 +430,7 @@ def ScrollAll(event):
 
 def luz():
     imagen = Image.open("/home/dev-16/Documentos/Universidad/Python-Revelo-Karla/py-revelo-herrera-karla-michelle/perrito.png")    
+    imagen = imagen.resize((400, 410), Image.ANTIALIAS)
     imagen_efecto = ImageEnhance.Brightness(imagen).enhance(2)
     image1 = ImageTk.PhotoImage(imagen_efecto)
     background_label = Label(pantallaEfectos, image=image1)
@@ -425,6 +440,7 @@ def luz():
     
 def contraste():
     imagen = Image.open("/home/dev-16/Documentos/Universidad/Python-Revelo-Karla/py-revelo-herrera-karla-michelle/perrito.png")
+    imagen = imagen.resize((400, 410), Image.ANTIALIAS)
     imagen_efecto = ImageEnhance.Contrast(imagen).enhance(4)
     image1 = ImageTk.PhotoImage(imagen_efecto)
     background_label = Label(pantallaEfectos, image=image1)
@@ -434,6 +450,7 @@ def contraste():
 
 def saturacion():
     imagen = Image.open("/home/dev-16/Documentos/Universidad/Python-Revelo-Karla/py-revelo-herrera-karla-michelle/perrito.png")
+    imagen = imagen.resize((400, 410), Image.ANTIALIAS)
     imagen_efecto = ImageOps.equalize(imagen)
     image1 = ImageTk.PhotoImage(imagen_efecto)
     background_label = Label(pantallaEfectos, image=image1)
@@ -443,6 +460,7 @@ def saturacion():
 
 def temperatura():
     imagen = Image.open("/home/dev-16/Documentos/Universidad/Python-Revelo-Karla/py-revelo-herrera-karla-michelle/perrito.png")    
+    imagen = imagen.resize((400, 410), Image.ANTIALIAS)
     imagen_gris = ImageOps.grayscale(imagen)
     imagen_efecto = ImageOps.colorize(imagen_gris, "black", "yellow")
     image1 = ImageTk.PhotoImage(imagen_efecto)
@@ -453,6 +471,7 @@ def temperatura():
 
 def ic():
     imagen = Image.open("/home/dev-16/Documentos/Universidad/Python-Revelo-Karla/py-revelo-herrera-karla-michelle/perrito.png")
+    imagen = imagen.resize((400, 410), Image.ANTIALIAS)
     imagen_efecto = ImageChops.invert(imagen)
     image1 = ImageTk.PhotoImage(imagen_efecto)
     background_label = Label(pantallaEfectos, image=image1)
@@ -462,6 +481,7 @@ def ic():
 
 def bn():
     imagen = Image.open("/home/dev-16/Documentos/Universidad/Python-Revelo-Karla/py-revelo-herrera-karla-michelle/perrito.png")
+    imagen = imagen.resize((400, 410), Image.ANTIALIAS)
     imagen_efecto = ImageOps.grayscale(imagen)
     image1 = ImageTk.PhotoImage(imagen_efecto)
     background_label = Label(pantallaEfectos, image=image1)
@@ -471,7 +491,7 @@ def bn():
 
 def callback7(event):
     global evento
-    global rotacion
+    global superposicion
     global imgCorte    
     evento = event.widget 
     evento_string = str(evento)
@@ -519,6 +539,7 @@ def superposicion():
     pantallaSuperpo.title('')
     pantallaSuperpo.configure(bg = 'white')
     image2 = Image.open("/home/dev-16/Documentos/Universidad/Python-Revelo-Karla/py-revelo-herrera-karla-michelle/perrito.png")                
+    image2 = image2.resize((400, 410), Image.ANTIALIAS)
     image1 = ImageTk.PhotoImage(image2)
     background_label = Label(pantallaSuperpo, image=image1)
     background_label.image=image1
@@ -533,7 +554,8 @@ def superposicion():
     img = img.resize((56, 56), Image.ANTIALIAS) # Redimension (Alto, Ancho)
     iconoCuadrado = ImageTk.PhotoImage(img)
     bCuadrado = Button(pantallaSuperpo, font=fontStyle, bg = 'white', fg = 'black',
-              height = 50, width=60, image=iconoCuadrado, compound="right", command = s_cuadrado)    
+              height = 50, width=60, image=iconoCuadrado, 
+              compound="right", command = s_cuadrado)    
     bCuadrado.image = iconoCuadrado
     bCuadrado.place(x=0, y=460)
     
@@ -541,7 +563,8 @@ def superposicion():
     img1 = img1.resize((30, 40), Image.ANTIALIAS) # Redimension (Alto, Ancho)
     iconoOvalo = ImageTk.PhotoImage(img1)
     bOvalo = tk.Button(pantallaSuperpo, font=fontStyle, bg = 'white', fg = 'black',
-              height = 50, width=60, image=iconoOvalo, compound="right", command = s_ovalo)
+              height = 50, width=60, image=iconoOvalo, 
+              compound="right", command = s_ovalo)
     bOvalo.image = iconoOvalo
     bOvalo.place(x=68, y=460)
     
@@ -549,7 +572,8 @@ def superposicion():
     img2 = img2.resize((40, 40), Image.ANTIALIAS) # Redimension (Alto, Ancho)
     iconoTriangulo = ImageTk.PhotoImage(img2)
     bTriangulo = tk.Button(pantallaSuperpo, font=fontStyle, bg = 'white', fg = 'black',
-              height = 50, width=60, image=iconoTriangulo, compound="right", command = horizontal)
+              height = 50, width=60, image=iconoTriangulo,
+              compound="right", command = s_triangulo)
     bTriangulo.image = iconoTriangulo
     bTriangulo.place(x=136, y=460)
     
@@ -557,7 +581,8 @@ def superposicion():
     img3 = img3.resize((40, 40), Image.ANTIALIAS) # Redimension (Alto, Ancho)
     iconoTriangulo2 = ImageTk.PhotoImage(img3)
     btInvertido = tk.Button(pantallaSuperpo, font=fontStyle, bg = 'white', fg = 'black',
-              height = 50, width=60,  image=iconoTriangulo2, compound="right", command = vertical)
+              height = 50, width=60,  image=iconoTriangulo2, 
+              compound="right", command = s_trianguloIn)
     btInvertido.image = iconoTriangulo2
     btInvertido.place(x=204, y=460)
     
@@ -565,7 +590,8 @@ def superposicion():
     img4 = img4.resize((40, 40), Image.ANTIALIAS) # Redimension (Alto, Ancho)
     iconoCirculo = ImageTk.PhotoImage(img4)
     bCirculo = tk.Button(pantallaSuperpo, font=fontStyle, bg = 'white', fg = 'black',
-              height = 50, width=60, image=iconoCirculo, compound="right", command = ic)
+              height = 50, width=60, image=iconoCirculo, 
+              compound="right", command = s_circulo)
     bCirculo.image = iconoCirculo
     bCirculo.place(x=270, y=460)    
     
@@ -573,33 +599,75 @@ def superposicion():
     img5 = img5.resize((40, 30), Image.ANTIALIAS) # Redimension (Alto, Ancho)
     iconoRectangulo = ImageTk.PhotoImage(img5)
     bRectangulo = tk.Button(pantallaSuperpo, font=fontStyle, bg = 'white', fg = 'black',
-              height = 50, width=60, image=iconoRectangulo, compound="right", command = bn)
+              height = 50, width=60, image=iconoRectangulo, 
+              compound="right", command = s_rectangulo)
     bRectangulo.image = iconoRectangulo
     bRectangulo.place(x=336, y=460)    
     
-    pantallaSuperpo.bind("<Button-1>", callback3)
+    pantallaSuperpo.bind("<Button-1>", callback7)
     #print(corte_selec)
-    pantallaSuperpo.bind("<Button-3>", callback4)    
+    pantallaSuperpo.bind("<Button-3>", callback8)    
 
 def s_cuadrado():
-    img = Image.open("/home/dev-16/Documentos/Universidad/Python-Revelo-Karla/py-revelo-herrera-karla-michelle/perrito.png")    
-    img = img.resize((300, 300), Image.ANTIALIAS) # Redimension (Alto, Ancho)
-    img_with_border = ImageOps.expand(img,border=50,fill='white')
-    img_with_border.show()
-    
-    #image1 = ImageTk.PhotoImage(imagen_superpo)
-    #background_label = Label(pantallaSuperpo, image=image1)
-    #background_label.image=image1
-    #background_label.place(x=0, y=60, height=385, width=400)       
-    #return image1 
+    img = Image.open("cuadrado.jpeg")            
+    img = img.resize((400, 410), Image.ANTIALIAS)
+    image1 = ImageTk.PhotoImage(img)
+    background_label = Label(pantallaSuperpo, image=image1)
+    background_label.image=image1
+    background_label.place(x=0, y=60, height=385, width=400)
+    background_label.pick(size="left")       
+    return image1 
 
 def s_ovalo():
-    img = Image.open("/home/dev-16/Documentos/Universidad/Python-Revelo-Karla/py-revelo-herrera-karla-michelle/perrito.png")    
-    dibujo = ImageDraw.Draw(img)    
-    elipse = dibujo.ellipse((0, 90) + (800,200), outline = "yellow")        
-    #area_recortada = img.crop(elipse)
-    #area_recortada.show()
-    
+    img = Image.open("ovalo.jpeg")            
+    img = img.resize((400, 410), Image.ANTIALIAS)
+    image1 = ImageTk.PhotoImage(img)
+    background_label = Label(pantallaSuperpo, image=image1)
+    background_label.image=image1
+    background_label.place(x=0, y=60, height=385, width=400)
+    background_label.pick(size="left")       
+    return image1 
+
+def s_triangulo():
+    img = Image.open("triangulo.jpeg")            
+    img = img.resize((400, 410), Image.ANTIALIAS)
+    image1 = ImageTk.PhotoImage(img)
+    background_label = Label(pantallaSuperpo, image=image1)
+    background_label.image=image1
+    background_label.place(x=0, y=60, height=385, width=400)
+    background_label.pick(size="left")       
+    return image1 
+
+def s_trianguloIn():
+    img = Image.open("trianguloInvertido.jpeg")            
+    img = img.resize((400, 410), Image.ANTIALIAS)
+    image1 = ImageTk.PhotoImage(img)
+    background_label = Label(pantallaSuperpo, image=image1)
+    background_label.image=image1
+    background_label.place(x=0, y=60, height=385, width=400)
+    background_label.pick(size="left")       
+    return image1 
+
+def s_circulo():
+    img = Image.open("circulo.jpeg")            
+    img = img.resize((400, 410), Image.ANTIALIAS)
+    image1 = ImageTk.PhotoImage(img)
+    background_label = Label(pantallaSuperpo, image=image1)
+    background_label.image=image1
+    background_label.place(x=0, y=60, height=385, width=400)
+    background_label.pick(size="left")       
+    return image1     
+
+def s_rectangulo():
+    img = Image.open("rectangulo.jpeg")            
+    img = img.resize((400, 410), Image.ANTIALIAS)
+    image1 = ImageTk.PhotoImage(img)
+    background_label = Label(pantallaSuperpo, image=image1)
+    background_label.image=image1
+    background_label.place(x=0, y=60, height=385, width=400)
+    background_label.pick(size="left")       
+    return image1 
+
 def guardar_imagen(image1):
     pantallaPrincipal = tk.Toplevel()
     pantallaPrincipal.geometry('400x510') 
