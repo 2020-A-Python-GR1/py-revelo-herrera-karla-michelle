@@ -491,43 +491,56 @@ def bn():
 
 def callback7(event):
     global evento
-    global superposicion
+    global superp
     global imgCorte    
     evento = event.widget 
     evento_string = str(evento)
     print(evento_string)
-    if(evento_string == ".!toplevel3.!button3"):
-        print("izquierda")
-        rotacion = "izquierda()"
-        imgCorte = izquierda()
-        print(corte)
-    elif(evento_string == ".!toplevel3.!button4"):
-        print("derecha") 
-        rotacion = "derecha()"
-        imgCorte = derecha()
-        print(corte)
-    elif(evento_string == ".!toplevel3.!button5"):
-        print("horizontal")
-        rotacion = "horizontal()"
-        imgCorte = horizontal()
-        print(corte)
-    elif(evento_string == ".!toplevel3.!button6"):
-        print("vertical")
-        rotacion = "vertical()"
-        imgCorte = vertical()
-        print(corte)
+    if(evento_string == ".!toplevel2.!button3"):
+        print("s_cuadrado")
+        superp = "s_cuadrado()"
+        imgCorte = s_cuadrado()
+        print(superp)
+    elif(evento_string == ".!toplevel2.!button4"):
+        print("s_ovalo") 
+        superp = "s_ovalo()"
+        imgCorte = s_ovalo()
+        print(superp)
+    elif(evento_string == ".!toplevel2.!button5"):
+        print("s_triangulo")
+        superp = "s_triangulo()"
+        imgCorte = s_triangulo()
+        print(superp)
+    elif(evento_string == ".!toplevel2.!button6"):
+        print("s_trianguloIn")
+        superp = "s_trianguloIn()"
+        imgCorte = s_trianguloIn()
+        print(superp)
+    elif(evento_string == ".!toplevel2.!button7"):
+        print("s_circulo")
+        superp = "s_circulo()"
+        imgCorte = s_circulo()
+        print(superp)
+    elif(evento_string == ".!toplevel2.!button8"):
+        print("s_rectangulo")
+        superp = "s_rectangulo()"
+        imgCorte = s_rectangulo()
+        print(superp)
     
-
 def callback8(event):
-    print("entro al 4")
-    print(rotacion)
-    if(rotacion == "izquierda()"):
+    print("entro al 8")
+    print(superp)
+    if(superp == "s_cuadrado()"):
         guardar_imagen(imgCorte)
-    elif(rotacion == "derecha()"):
+    elif(superp == "s_ovalo()"):
         guardar_imagen(imgCorte)
-    if(rotacion == "horizontal()"):
+    elif(superp == "s_triangulo()"):
         guardar_imagen(imgCorte)
-    if(rotacion == "vertical()"):
+    elif(superp == "s_trianguloIn()"):
+        guardar_imagen(imgCorte)
+    elif(superp == "s_circulo()"):
+        guardar_imagen(imgCorte)
+    elif(superp == "s_rectangulo()"):
         guardar_imagen(imgCorte)
         
 def superposicion():
@@ -604,8 +617,7 @@ def superposicion():
     bRectangulo.image = iconoRectangulo
     bRectangulo.place(x=336, y=460)    
     
-    pantallaSuperpo.bind("<Button-1>", callback7)
-    #print(corte_selec)
+    pantallaSuperpo.bind("<Button-1>", callback7)    
     pantallaSuperpo.bind("<Button-3>", callback8)    
 
 def s_cuadrado():
@@ -614,8 +626,7 @@ def s_cuadrado():
     image1 = ImageTk.PhotoImage(img)
     background_label = Label(pantallaSuperpo, image=image1)
     background_label.image=image1
-    background_label.place(x=0, y=60, height=385, width=400)
-    background_label.pick(size="left")       
+    background_label.place(x=0, y=60, height=385, width=400)    
     return image1 
 
 def s_ovalo():
@@ -624,8 +635,7 @@ def s_ovalo():
     image1 = ImageTk.PhotoImage(img)
     background_label = Label(pantallaSuperpo, image=image1)
     background_label.image=image1
-    background_label.place(x=0, y=60, height=385, width=400)
-    background_label.pick(size="left")       
+    background_label.place(x=0, y=60, height=385, width=400)         
     return image1 
 
 def s_triangulo():
@@ -634,8 +644,7 @@ def s_triangulo():
     image1 = ImageTk.PhotoImage(img)
     background_label = Label(pantallaSuperpo, image=image1)
     background_label.image=image1
-    background_label.place(x=0, y=60, height=385, width=400)
-    background_label.pick(size="left")       
+    background_label.place(x=0, y=60, height=385, width=400)         
     return image1 
 
 def s_trianguloIn():
@@ -644,8 +653,7 @@ def s_trianguloIn():
     image1 = ImageTk.PhotoImage(img)
     background_label = Label(pantallaSuperpo, image=image1)
     background_label.image=image1
-    background_label.place(x=0, y=60, height=385, width=400)
-    background_label.pick(size="left")       
+    background_label.place(x=0, y=60, height=385, width=400)    
     return image1 
 
 def s_circulo():
@@ -654,8 +662,7 @@ def s_circulo():
     image1 = ImageTk.PhotoImage(img)
     background_label = Label(pantallaSuperpo, image=image1)
     background_label.image=image1
-    background_label.place(x=0, y=60, height=385, width=400)
-    background_label.pick(size="left")       
+    background_label.place(x=0, y=60, height=385, width=400)        
     return image1     
 
 def s_rectangulo():
@@ -664,8 +671,7 @@ def s_rectangulo():
     image1 = ImageTk.PhotoImage(img)
     background_label = Label(pantallaSuperpo, image=image1)
     background_label.image=image1
-    background_label.place(x=0, y=60, height=385, width=400)
-    background_label.pick(size="left")       
+    background_label.place(x=0, y=60, height=385, width=400)           
     return image1 
 
 def guardar_imagen(image1):
