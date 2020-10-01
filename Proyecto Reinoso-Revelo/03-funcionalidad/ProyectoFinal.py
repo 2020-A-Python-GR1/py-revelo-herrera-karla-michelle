@@ -3,7 +3,7 @@
 """
 Created on Fri Sep 18 21:56:20 2020
 
-@author: dev-16
+@author: Reinoso Paul - Revelo Karla
 """
 
 from tkinter import *    # Carga módulo tk (widgets estándar)
